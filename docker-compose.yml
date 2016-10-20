@@ -1,10 +1,3 @@
-# Docker Compose file for ELK stack
-
-# Build with:
-# docker-compose build elk
-
-# Run with:
-# docker-compose up
 
 elk:
   build: image:  sebp/elk
@@ -13,3 +6,5 @@ elk:
     - "9200:9200"
     - "5044:5044"
     - "5000:5000"
+  volumes:
+    ./elk-data:/var/lib/elasticsearch
